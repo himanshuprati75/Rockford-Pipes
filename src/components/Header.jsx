@@ -170,25 +170,24 @@ export default function Header({ onOpenCallModal }) {
         {/* Header CTAs */}
         <div className="flex items-center gap-3 shrink-0">
           {/* Dispatch Phone (Call or Text) */}
-          <div className="hidden sm:flex flex-col items-end text-right whitespace-nowrap">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-flame-700 flex items-center gap-1 whitespace-nowrap">
-              <span className="w-1.5 h-1.5 rounded-full bg-flame-500 animate-pulse"></span>
-              24/7 Call or Text
-            </span>
-            <a 
-              href="tel:8158211185"
-              onClick={(e) => {
-                if (window.innerWidth >= 1024) {
-                  e.preventDefault();
-                  onOpenCallModal();
-                }
-              }}
-              className="text-lg font-black text-steel-950 hover:text-pipe-700 transition-colors tracking-tight flex items-center gap-1.5 whitespace-nowrap"
-            >
-              <Phone className="w-4 h-4 text-flame-600 shrink-0" />
-              <span>(815) 821-1185</span>
-            </a>
-          </div>
+          <a
+            href="tel:8158211185"
+            className="hidden sm:flex items-center gap-2.5 px-3 py-1.5 rounded-xl hover:bg-slate-100 transition-all group"
+            title="Call (815) 821-1185 immediately"
+          >
+            <div className="w-8 h-8 rounded-full bg-flame-100 group-hover:bg-flame-600 flex items-center justify-center transition-colors shadow-sm">
+              <Phone className="w-4 h-4 text-flame-600 group-hover:text-white transition-colors" />
+            </div>
+            <div className="flex flex-col items-start text-left">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-flame-700 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-flame-500 animate-ping"></span>
+                Book a Call Now
+              </span>
+              <span className="text-sm md:text-base font-extrabold text-steel-950 group-hover:text-flame-600 transition-colors whitespace-nowrap">
+                (815) 821-1185
+              </span>
+            </div>
+          </a>
 
           {/* Mobile Direct Tap Call Button */}
           <a
